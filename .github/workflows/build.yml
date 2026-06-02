@@ -28,7 +28,7 @@ jobs:
           unzip -q /tmp/gradle.zip -d /opt/gradle
           echo "/opt/gradle/gradle-8.1.1/bin" >> $GITHUB_PATH
 
-     - name: Generate placeholder textures
+      - name: Generate placeholder textures
         run: |
           pip install Pillow --quiet
           if [ -f generate_textures.py ]; then
