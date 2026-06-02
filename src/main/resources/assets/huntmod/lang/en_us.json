@@ -1,0 +1,10 @@
+{
+  "item.huntmod.dark_nest_egg": "Dark Nest Egg",
+  "block.huntmod.dark_nest": "Dark Nest",
+  "effect.huntmod.dark_sight": "Dark Sight",
+  "key.huntmod.dark_sight": "Dark Sight",
+  "key.categories.huntmod": "Hunt Showdown",
+  "huntmod.dark_nest.already_activated": "You already carry the Dark Sight.",
+  "huntmod.dark_nest.max_players": "The Dark Nest has already been claimed by two hunters.",
+  "huntmod.dark_sight.granted": "The Dark Sight has been granted to you."
+}
