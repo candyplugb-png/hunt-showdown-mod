@@ -6,15 +6,8 @@ license="MIT"
     modId="huntmod"
     version="1.0.0"
     displayName="Hunt Showdown Dark Sight"
-    description='''
-    Adds the Hunt Showdown Dark Sight mechanic to Minecraft.
-    The Dark Nest block can grant Dark Sight to up to 2 players.
-    While holding the Dark Sight key, the screen darkens
-    and you can see the bounty nest at any range,
-    and enemy players with Dark Sight within 75 blocks are outlined in red.
-    '''
+    description="Hunt Showdown Dark Sight for Minecraft 1.20.1"
     authors="YourName"
-    displayURL="https://github.com/yourname/hunt-showdown-mod"
 
 [[dependencies.huntmod]]
     modId="forge"
