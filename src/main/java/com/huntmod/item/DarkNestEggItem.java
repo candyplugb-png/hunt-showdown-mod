@@ -1,27 +1,20 @@
 package com.huntmod.item;
-
 import com.huntmod.init.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-
 public class DarkNestEggItem extends Item {
-    public DarkNestEggItem(Properties properties) {
-        super(properties);
-    }
-
+    public DarkNestEggItem(Properties p) { super(p); }
     @Override
-    public InteractionResult useOn(UseOnContext context) {
-        Level level = context.getLevel();
+    public InteractionResult useOn(UseOnContext ctx) {
+        Level level = ctx.getLevel();
         if (!level.isClientSide()) {
-            BlockPos placePos = context.getClickedPos().relative(context.getClickedFace());
-            if (level.getBlockState(placePos).isAir()) {
-                level.setBlock(placePos, ModBlocks.DARK_NEST.get().defaultBlockState(), 3);
-                if (!context.getPlayer().getAbilities().instabuild) {
-                    context.getItemInHand().shrink(1);
-                }
+            BlockPos pos = ctx.getClickedPos().relative(ctx.getClickedFace());
+            if (level.getBlockState(pos).isAir()) {
+                level.setBlock(pos, ModBlocks.DARK_NEST.get().defaultBlockState(), 3);
+                if (!ctx.getPlayer().getAbilities().instabuild) ctx.getItemInHand().shrink(1);
                 return InteractionResult.SUCCESS;
             }
         }

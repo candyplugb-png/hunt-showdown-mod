@@ -1,21 +1,18 @@
 modLoader="javafml"
 loaderVersion="[47,)"
 license="MIT"
-
 [[mods]]
     modId="huntmod"
     version="1.0.0"
     displayName="Hunt Showdown Dark Sight"
-    description="Adds Hunt Showdown Dark Sight mechanic to Minecraft."
+    description="Hunt Showdown Dark Sight for Minecraft 1.20.1"
     authors="YourName"
-
 [[dependencies.huntmod]]
     modId="forge"
     mandatory=true
     versionRange="[47.2,)"
     ordering="NONE"
     side="BOTH"
-
 [[dependencies.huntmod]]
     modId="minecraft"
     mandatory=true
