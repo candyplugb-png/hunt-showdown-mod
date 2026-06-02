@@ -1,0 +1,10 @@
+{
+  "item.huntmod.dark_nest_egg": "Яйцо Тёмного Гнезда",
+  "block.huntmod.dark_nest": "Тёмное Гнездо",
+  "effect.huntmod.dark_sight": "Тёмное Зрение",
+  "key.huntmod.dark_sight": "Тёмное Зрение",
+  "key.categories.huntmod": "Hunt Showdown",
+  "huntmod.dark_nest.already_activated": "Вы уже несёте Тёмное Зрение.",
+  "huntmod.dark_nest.max_players": "Тёмное Гнездо уже забрали двое охотников.",
+  "huntmod.dark_sight.granted": "Тёмное Зрение даровано вам."
+}
