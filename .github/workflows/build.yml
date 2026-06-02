@@ -8,8 +8,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
         uses: actions/setup-java@v4
@@ -17,27 +19,31 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Cache Gradle
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.1.1'
+
+      - name: Cache Gradle packages
         uses: actions/cache@v4
         with:
           path: |
             ~/.gradle/caches
             ~/.gradle/wrapper
-          key: gradle-${{ hashFiles('**/*.gradle*') }}
+          key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: gradle-${{ runner.os }}-
 
-      - name: Generate textures
+      - name: Generate placeholder textures
         run: |
-          pip install Pillow
+          pip install Pillow --quiet
           python generate_textures.py
 
-      - name: Make gradlew executable
-        run: chmod +x gradlew
+      - name: Build mod
+        run: gradle build --no-daemon
 
-      - name: Build
-        run: ./gradlew build --no-daemon
-
-      - name: Upload JAR
+      - name: Upload JAR artifact
         uses: actions/upload-artifact@v4
         with:
           name: huntmod-jar
           path: build/libs/*.jar
+          if-no-files-found: error
